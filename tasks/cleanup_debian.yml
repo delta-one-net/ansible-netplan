@@ -1,0 +1,21 @@
+---
+- name: enable systemd-networkd
+  ansible.builtin.service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  with_items:
+    - systemd-networkd
+    - systemd-resolved
+    - ovsdb-server
+
+- name: uninstall ifupdown
+  ansible.builtin.apt:
+    name: ifupdown
+    state: absent
+
+- name: remove interfaces file
+  ansible.builtin.file:
+    path: "/etc/network/interfaces"
+    state: absent
+

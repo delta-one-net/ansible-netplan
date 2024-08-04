@@ -8,3 +8,7 @@
     - netplan_remove_existing
 
 - import_tasks: configure.yml
+
+- ansible.builtin.import_tasks: cleanup_debian.yml
+  when:
+    - ansible_distribution == "Debian"
