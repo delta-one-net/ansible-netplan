@@ -86,8 +86,6 @@ netplan_backup_existing: false
 
 netplan_packages:
   - netplan.io
-  - openvswitch-switch
-  - systemd-resolved
 
 netplan_pri_domain: example.org
 
