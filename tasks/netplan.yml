@@ -11,4 +11,4 @@
 
 - ansible.builtin.import_tasks: cleanup_debian.yml
   when:
-    - ansible_distribution == "Debian"
+    - ansible_facts["distribution"] == "Debian"
